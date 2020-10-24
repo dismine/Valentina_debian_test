@@ -1,6 +1,6 @@
 .\" Manpage for valentina.
 .\" Contact dismine@gmail.com to correct errors.
-.TH valentina 1 "15 March, 2020" "valentina man page"
+.TH valentina 1 "22 March, 2020" "valentina man page"
 .SH NAME
 Valentina \- Pattern making program.
 .SH SYNOPSIS
@@ -139,10 +139,12 @@ The path to output destination folder. By default the directory at which the app
 .RB "Export only details. Export details as they positioned in the details mode. Any layout related options will be ignored."
 .IP "--exportSuchDetails <The name regex>"
 .RB "Export only details that match a piece name regex."
-.IP "-x, --gsize <The size value>"
-.RB "Set size value a pattern file, that was opened with multisize measurements " "(export mode)" ". Valid values: 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56cm."
-.IP "-e, --gheight <The height value>"
-.RB "Set height value a pattern file, that was opened with multisize measurements (" "export mode" "). Valid values: 92, 98, 104, 110, 116, 122, 128, 134, 140, 146, 152, 158, 164, 170, 176, 182, 188, 194, 200cm."
+.IP "--dimensionA <The dimension A base>"
+.RB "Set base for dimension A in the multisize measurements units " "(export mode)" "."
+.IP "--dimensionB <The dimension B base>"
+.RB "Set base for dimension B in the multisize measurements units " "(export mode)" "."
+.IP "--dimensionC <The dimension C base>"
+.RB "Set base for dimension C in the multisize measurements units " "(export mode)" "."
 .IP "--userMaterial <User material>"                      
 .RB "Use this option to override user material defined in pattern. The value must be in form <number>@<user matrial name>. The number should be in range from 1 to 20. For example, 1@Fabric2. The key can be used multiple times. Has no effect in GUI mode."
 .IP "-p, --pageformat <Template number>"
@@ -213,10 +215,14 @@ The path to output destination folder. By default the directory at which the app
 .RB "Page top margin in current units like 3.0 (" "export mode" "). If not set will be used value from default printer. Or 0 if none printers was found."
 .IP "-B, --bmargin <The bottom margin>"
 .RB "Page bottom margin in current units like 3.0 (" "export mode" "). If not set will be used value from default printer. Or 0 if none printers was found."
+.IP "--xscale <Horizontal scale>"
+.RB "Set horizontal scale factor from 0.01 to 3.0 (default = 1.0, " "export mode" ")."
+.IP "--yscale <Vertical scale>"
+.RB "Set vertical scale factor from 0.01 to 3.0 (default = 1.0, " "export mode" ")."
 .IP "--followGrainline"
-.RB "Order detail to follow grainline direction (" "export mode" ").
+.RB "Order detail to follow grainline direction (" "export mode" ")."
 .IP "--manualPriority"
-.RB "Follow manual priority over priority by square (" "export mode" ").
+.RB "Follow manual priority over priority by square (" "export mode" ")."
 .IP "--nestQuantity"
 .RB "Nest quantity copies of each piece (" "export mode" ").
 .IP "-c, --crop"
@@ -225,6 +231,8 @@ The path to output destination folder. By default the directory at which the app
 .RB "Auto crop unused width (" "export mode" ")."
 .IP "-u, --unite"
 .RB "Unite pages if possible (" "export mode" "). Maximum value limited by QImage that supports only a maximum of " "32768x32768 px" " images."
+.IP "--preferOneSheetSolution"
+.RB "Prefer one sheet layout solution (" "export mode" ")."
 .IP "-S, --savelen"
 .RB "Save length of the sheet if set (" "export mode" "). The option tells the program to use as much as possible width of sheet. Quality of a layout can be worse when this option was used."
 .IP "-l, --layounits <The unit>"
